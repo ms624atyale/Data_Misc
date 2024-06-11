@@ -1,0 +1,21 @@
+> install.packages(“readr”) #You choose “Korea for CRAN use.”
+> library(read)
+> install.packages(“car”)
+> library(car)
+> library(carData)
+> install.packages(“lme4”)
+> library(lme4)
+> library(Matrix)
+> install.packages(“lmerTest”)
+> library(lmerTest)
+
+
+The sample data is from an EMA experiment with 7 speakers. 
+
+> file_path = file.choose() #You choose a csv file in the file directory on your machine. 
+> dt = read_csv(file_path)
+> str(dt)
+> head(dt)
+> tail (dt)
+> summary(lm(LLy_ConstrictionDur ~ SpeechRate, data = dt)) #linear regression model
+> summary(lmer(LLy_ConstrictionDur ~ SpeechRate + (1|Subject), data = dt))
